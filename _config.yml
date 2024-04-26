@@ -22,7 +22,7 @@ title: Vinothvkr
 email: vinothvkr@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Senior Software Engineer
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://vinothvkr.com/blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: _vinothvkr
 github_username:  vinothvkr

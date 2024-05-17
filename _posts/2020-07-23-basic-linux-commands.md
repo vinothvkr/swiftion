@@ -1,5 +1,6 @@
 ---
 id: 8
+slug: basic-linux-commands
 published: true
 title: Basic Linux commands
 date: '2020-07-23 05:19:35 +0530'

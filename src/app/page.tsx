@@ -1,6 +1,5 @@
 import BlogPostCard from '@/components/blog/PostCard';
 import { getAllBlogPosts } from '@/utils/data';
-import path from '@/utils/path';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Metadata } from 'next';
@@ -20,11 +19,12 @@ export default function Home() {
           posts.map((post, index) => (
             <Grid key={post.data.id} item xs={12} sm={6} md={4}>
               <BlogPostCard
+                slug={post.data.slug}
                 category={post.data.category}
                 date={post.data.date}
                 title={post.data.title}
                 excerpt={post.excerpt}
-                image={path(post.data.image)}
+                image={post.data.image}
               />
             </Grid>
           ))}

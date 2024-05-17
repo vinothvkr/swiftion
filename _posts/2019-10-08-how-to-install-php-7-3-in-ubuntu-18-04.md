@@ -1,5 +1,6 @@
 ---
 id: 6
+slug: how-to-install-php-7-3-in-ubuntu-18-04
 published: true
 title: How to install PHP 7.3 in Ubuntu 18.04
 date: '2019-10-08 16:59:08 +0530'

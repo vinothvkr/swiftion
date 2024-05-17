@@ -1,5 +1,6 @@
 'use client';
-import { useTheme } from '@mui/material';
+import withBasePath from '@/utils/path';
+import { Link, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,8 +9,10 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { format } from 'date-fns';
+import RouterLink from 'next/link';
 
 type Post = {
+  slug: string;
   category: string;
   date: string;
   title: string;
@@ -17,7 +20,7 @@ type Post = {
   image: string;
 };
 
-export default function BlogPostCard({ category, date, title, excerpt, image }: Post) {
+export default function BlogPostCard({ slug, category, date, title, excerpt, image }: Post) {
   const theme = useTheme();
   return (
     <>
@@ -40,9 +43,17 @@ export default function BlogPostCard({ category, date, title, excerpt, image }: 
                 {format(date, 'dd MMM yyyy')}
               </Typography>
             </Stack>
-            <Typography component="h2" variant="h6" sx={{ mt: 3 }}>
-              {title}
-            </Typography>
+            <Box sx={{ mt: 3 }}>
+              <Link
+                component={RouterLink}
+                href={'/' + slug}
+                variant="h6"
+                sx={{ textDecoration: 'none' }}
+                color={theme.palette.secondary.main}
+              >
+                {title}
+              </Link>
+            </Box>
             <Typography component="div" variant="caption">
               {excerpt}
             </Typography>
@@ -52,7 +63,7 @@ export default function BlogPostCard({ category, date, title, excerpt, image }: 
         <CardMedia
           component="img"
           sx={{ width: 151, m: '8px 8px 8px 0', borderRadius: '8px' }}
-          image={image}
+          image={withBasePath(image)}
           alt={title}
           height="200px"
         />

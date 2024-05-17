@@ -1,5 +1,6 @@
 ---
 id: 2
+slug: how-to-setup-a-firewall-with-ufw-on-ubuntu-18-04
 published: true
 title: How to setup a Firewall with UFW on Ubuntu 20.04
 date: '2018-07-16 13:45:33 +0530'

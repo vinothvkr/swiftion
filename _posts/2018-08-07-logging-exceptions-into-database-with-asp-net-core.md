@@ -1,5 +1,6 @@
 ---
 id: 4
+slug: logging-exceptions-into-database-with-asp-net-core
 published: true
 title: Logging Exceptions into Database with Asp.Net Core
 date: '2018-08-07 14:14:20 +0530'

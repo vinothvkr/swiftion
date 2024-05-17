@@ -1,5 +1,6 @@
 ---
 id: 3
+slug: enable-submit-button-if-at-least-one-input-has-value
 published: true
 title: Enable submit button if at least one input has value
 date: '2018-07-26 13:52:24 +0530'

@@ -1,5 +1,6 @@
 ---
 id: 1
+slug: how-to-install-znc-on-ubuntu-18-04
 published: true
 title: How to install ZNC on Ubuntu 18.04
 date: '2018-07-12 13:29:44 +0530'

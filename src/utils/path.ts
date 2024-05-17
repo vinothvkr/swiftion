@@ -1,3 +1,3 @@
-export default function path(path: string) {
+export default function withBasePath(path: string) {
   return '/blog' + path;
 }

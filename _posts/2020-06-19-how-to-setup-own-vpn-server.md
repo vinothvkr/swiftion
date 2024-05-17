@@ -1,5 +1,6 @@
 ---
 id: 7
+slug: how-to-setup-own-vpn-server
 published: true
 title: How to setup own VPN server
 date: '2020-06-19 11:13:13 +0530'

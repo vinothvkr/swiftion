@@ -1,5 +1,6 @@
 ---
 id: 9
+slug: revert-back-to-stock-os-in-oneplus
 published: true
 title: Revert back to stock OS in OnePlus
 date: '2021-05-31 12:06:25 +0530'

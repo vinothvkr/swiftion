@@ -1,5 +1,6 @@
 ---
 id: 5
+slug: allow-action-method-to-be-accessed-only-by-anonymous-user-in-asp-net-core-mvc
 published: true
 title: Allow action method to be accessed only by anonymous user in Asp.Net Core MVC
 date: '2018-08-31 15:36:05 +0530'

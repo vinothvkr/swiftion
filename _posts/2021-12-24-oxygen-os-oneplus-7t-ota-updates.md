@@ -1,5 +1,6 @@
 ---
 id: 10
+slug: oxygen-os-oneplus-7t-ota-updates
 published: true
 title: Oxygen OS Oneplus 7T OTA Updates
 date: '2021-12-23 12:06:25 +0530'

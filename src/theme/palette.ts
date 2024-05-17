@@ -1,13 +1,4 @@
-import {
-  california,
-  Grey,
-  kepple,
-  neonBlue,
-  nevada,
-  redOrange,
-  shakespeare,
-  stormGrey,
-} from './colors';
+import { california, kepple, neonBlue, nevada, redOrange, shakespeare, stormGrey } from './colors';
 
 export type ColorSchema = 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error';
 

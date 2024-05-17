@@ -95,6 +95,7 @@ export default function palette(themeMode: 'light' | 'dark') {
       secondaryChannel: '159 166 173',
     },
     secondary: {
+      ...nevada,
       light: nevada[100],
       main: nevada[200],
       dark: nevada[300],

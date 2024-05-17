@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import { SettingsProvider } from '@/components/settings/SettingsContext';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 // FONTS
 import '@fontsource/roboto/300.css';
@@ -36,34 +37,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SettingsProvider>
-          <ThemeProvider>
-            <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
-              <motion.div
-                style={{
-                  left: 0,
-                  position: 'fixed',
-                  width: '100%',
-                  height: 5,
-                  background: theme.palette.primary.main,
-                  scaleX,
-                  transformOrigin: '0% 0%',
-                  zIndex: 1999,
+        <AppRouterCacheProvider>
+          <SettingsProvider>
+            <ThemeProvider>
+              <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
+                <motion.div
+                  style={{
+                    left: 0,
+                    position: 'fixed',
+                    width: '100%',
+                    height: 5,
+                    background: theme.palette.primary.main,
+                    scaleX,
+                    transformOrigin: '0% 0%',
+                    zIndex: 1999,
+                  }}
+                />
+              </Box>
+              <Header />
+              <Box
+                component="main"
+                sx={{
+                  flexGrow: 1,
+                  pt: { xs: 8, md: 11 },
                 }}
-              />
-            </Box>
-            <Header />
-            <Box
-              component="main"
-              sx={{
-                flexGrow: 1,
-                pt: { xs: 8, md: 11 },
-              }}
-            >
-              {children}
-            </Box>
-          </ThemeProvider>
-        </SettingsProvider>
+              >
+                {children}
+              </Box>
+            </ThemeProvider>
+          </SettingsProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

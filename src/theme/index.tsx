@@ -1,11 +1,6 @@
 'use client';
 import { CssBaseline } from '@mui/material';
-import {
-  StyledEngineProvider,
-  ThemeOptions,
-  createTheme,
-  ThemeProvider as MUIThemeProvider,
-} from '@mui/material/styles';
+import { ThemeOptions, createTheme, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
 import { useMemo } from 'react';
 import palette from './palette';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
@@ -28,11 +23,9 @@ export default function ThemeProvider({ children }: Props) {
   const theme = createTheme(themeOptions);
 
   return (
-    <StyledEngineProvider injectFirst>
-      <MUIThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </MUIThemeProvider>
-    </StyledEngineProvider>
+    <MUIThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </MUIThemeProvider>
   );
 }

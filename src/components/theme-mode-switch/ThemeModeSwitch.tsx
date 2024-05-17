@@ -1,6 +1,6 @@
 'use client';
 import { styled } from '@mui/material/styles';
-import { Switch } from '@mui/material';
+import Switch from '@mui/material/Switch';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({

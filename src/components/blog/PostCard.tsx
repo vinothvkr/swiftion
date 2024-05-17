@@ -30,8 +30,8 @@ export default function BlogPostCard({ category, date, title, excerpt, image }: 
                 size="small"
                 sx={{
                   borderRadius: '6px',
-                  bgcolor: theme.palette.info[100],
-                  color: theme.palette.info[800],
+                  bgcolor: theme.palette.info.lighter,
+                  color: theme.palette.info.darker,
                   fontWeight: '700',
                 }}
               />

@@ -20,39 +20,51 @@ const common = {
   common: { black: '#000000', white: '#FFFFFF' },
   primary: {
     ...neonBlue,
+    lighter: neonBlue[300],
     light: neonBlue[400],
     main: neonBlue[500],
     dark: neonBlue[600],
+    darker: neonBlue[700],
   },
   secondary: {
     ...nevada,
+    lighter: nevada[500],
     light: nevada[600],
     main: nevada[700],
     dark: nevada[800],
+    darker: nevada[900],
   },
   info: {
     ...shakespeare,
+    lighter: shakespeare[300],
     light: shakespeare[400],
     main: shakespeare[500],
     dark: shakespeare[600],
+    darker: shakespeare[700],
   },
   success: {
     ...kepple,
+    lighter: kepple[300],
     light: kepple[400],
     main: kepple[500],
     dark: kepple[600],
+    darker: kepple[700],
   },
   warning: {
     ...california,
+    lighter: california[300],
     light: california[400],
     main: california[500],
     dark: california[600],
+    darker: california[700],
   },
   error: {
     ...redOrange,
+    lighter: redOrange[300],
     light: redOrange[400],
     main: redOrange[500],
     dark: redOrange[600],
+    darker: redOrange[700],
   },
 };
 
@@ -95,10 +107,11 @@ export default function palette(themeMode: 'light' | 'dark') {
       secondaryChannel: '159 166 173',
     },
     secondary: {
-      ...nevada,
+      lighter: nevada[50],
       light: nevada[100],
       main: nevada[200],
       dark: nevada[300],
+      darker: nevada[500],
     },
   } as const;
 

@@ -15,14 +15,21 @@ import {
   Toolbar,
   useTheme,
 } from '@mui/material';
-import Logo from '@/components/logo/Logo';
 import { useState } from 'react';
 import { IconMenu2 } from '@tabler/icons-react';
-import ThemeModeSwitch from '@/components/theme-mode-switch/ThemeModeSwitch';
 import useScreenDetector from '@/hooks/useScreenDetector';
 import useOffSetTop from '@/hooks/useOffSetTop';
 import { HEADER } from '@/config';
 import RouterLink from 'next/link';
+import dynamic from 'next/dynamic';
+
+const ThemeModeSwitch = dynamic(() => import('@/components/theme-mode-switch/ThemeModeSwitch'), {
+  ssr: false,
+});
+
+const Logo = dynamic(() => import('@/components/logo/Logo'), {
+  ssr: false,
+});
 
 const drawerWidth = 240;
 

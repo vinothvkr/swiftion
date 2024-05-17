@@ -1,4 +1,13 @@
-import { california, kepple, neonBlue, nevada, redOrange, shakespeare, stormGrey } from './colors';
+import {
+  california,
+  Grey,
+  kepple,
+  neonBlue,
+  nevada,
+  redOrange,
+  shakespeare,
+  stormGrey,
+} from './colors';
 
 export type ColorSchema = 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error';
 
@@ -83,7 +92,7 @@ export default function palette(themeMode: 'light' | 'dark') {
     mode: 'dark',
     action: { disabledBackground: 'rgba(0, 0, 0, 0.12)' },
     background: {
-      default: stormGrey[950],
+      default: '#212121',
       paper: stormGrey[800],
       neutral: stormGrey[500],
     },

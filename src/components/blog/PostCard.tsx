@@ -1,5 +1,4 @@
 'use client';
-import withBasePath from '@/utils/path';
 import { Link, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -63,7 +62,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
         <CardMedia
           component="img"
           sx={{ width: 151, m: '8px 8px 8px 0', borderRadius: '8px' }}
-          image={withBasePath(image)}
+          image={image}
           alt={title}
           height="200px"
         />

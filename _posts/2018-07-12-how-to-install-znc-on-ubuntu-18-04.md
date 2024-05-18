@@ -12,7 +12,7 @@ tags:
   - Ubuntu
 ---
 
-ZNC allows you to stay connected to IRC network.
+ZNC allows you to stay connected to IRC network.123
 
 ---
 

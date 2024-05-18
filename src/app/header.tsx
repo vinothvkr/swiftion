@@ -87,7 +87,7 @@ export default function Header() {
           }}
         >
           <Container
-            maxWidth="xl"
+            maxWidth="lg"
             sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
             <Logo showBlog />

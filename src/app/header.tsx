@@ -50,18 +50,13 @@ export default function Header() {
       <Divider />
       <List>
         <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }} href={MAIN_SITE_URL}>
+            <ListItemText primary="Back to VinothVKR" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: 'center' }} href="/">
             <ListItemText primary="Home" sx={{ textTransform: 'uppercase' }} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton sx={{ textAlign: 'center' }} href="/#about">
-            <ListItemText primary="About" sx={{ textTransform: 'uppercase' }} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton sx={{ textAlign: 'center' }} component={RouterLink} href="/">
-            <ListItemText primary="Blog" sx={{ textTransform: 'uppercase' }} />
           </ListItemButton>
         </ListItem>
       </List>
@@ -95,30 +90,26 @@ export default function Header() {
             maxWidth="xl"
             sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
-            <Logo />
+            <Logo showBlog />
+            {isDesktop && (
+              <Stack direction="row" spacing={2} sx={{ ml: 3 }}>
+                <Button
+                  color="secondary"
+                  sx={{ textTransform: 'none', fontSize: '16px' }}
+                  href={MAIN_SITE_URL}
+                >
+                  Back to VinothVKR
+                </Button>
+              </Stack>
+            )}
             <Box flexGrow="1" />
             <Box sx={{ mr: { xs: 2, md: 0 } }}>
               <ThemeModeSwitch />
             </Box>
             {isDesktop && (
               <Stack direction="row" spacing={2}>
-                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href={MAIN_SITE_URL}>
+                <Button color="secondary" sx={{ fontSize: '16px' }} component={RouterLink} href="/">
                   Home
-                </Button>
-                <Button
-                  color="secondary"
-                  sx={{ textTransform: 'uppercase' }}
-                  href={MAIN_SITE_URL + '/#about'}
-                >
-                  About
-                </Button>
-                <Button
-                  color="secondary"
-                  sx={{ textTransform: 'uppercase' }}
-                  component={RouterLink}
-                  href="/"
-                >
-                  Blog
                 </Button>
               </Stack>
             )}

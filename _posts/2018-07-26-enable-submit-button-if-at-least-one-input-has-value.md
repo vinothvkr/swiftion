@@ -12,14 +12,12 @@ tags:
   - JQuery
 ---
 
-<p><!-- wp:paragraph --></p>
-<p>There are some scenarios where submit button is enabled if at least one input has value. This tutorial will show you how to enable the submit button if you enter something into a text box, select drop down and check a check box.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Let&rsquo;s have a simple Html form:</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code><form class="cc-form">
+There are some scenarios where submit button is enabled if at least one input has value. This tutorial will show you how to enable the submit button if you enter something into a text box, select drop down and check a check box.
+
+Let's have a simple Html form:
+
+```
+<form class="cc-form">
   <input type="email" id="email" class="email" name="email">
   <input type="text" id="name" class="name" name="name">
   <input type="text" id="city" class="city" name="city">
@@ -29,13 +27,13 @@ tags:
   </select>
   <input name="checkbox" type="checkbox" value="true">
   <button type="submit" id="search">Search</button>
-</form></code></pre>
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>jQuery:</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>$(document).ready(function(){
+</form>
+```
+
+jQuery:
+
+```
+$(document).ready(function(){
   validateButton();
   $('.cc-form input:text').keyup(validateButton);
   $('.cc-form select').change(validateButton);
@@ -61,30 +59,24 @@ $('#search').attr('disabled', 'disabled');
 } else {
 $('#search').removeAttr('disabled', 'disabled');
 }
-}</code></pre>
+}
 
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>On document ready function <code>validateButton();</code> is being called, so on page load, form will be validated and if there is no value, button will be disabled.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>When ever keyup event occurs on any input text type <code>$('.cc-form input:text').keyup(validateButton);</code> calls the <code>validateButton();</code> and validates the form.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>If dropdown change event occurs <code>$('.cc-form select').change(validateButton);</code> will call <code>validateButton();</code> function.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Finally if a checkbox is checked or unchecked, change event <code>$('.cc-form input:checkbox').change(validateButton);</code> fires up and call our <code>validateButton();</code> function.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Let&rsquo;s see what our <code>validateButton();</code> does.<br>When ever the function called, it will set the variable <code>validation</code> to true to disable the button if there is no value. <code>$('.cc-form input:text, .cc-form select').each(function(){ });</code> select input and select fields then loop it. <code>$.trim($(this).val()).length > 0</code> if any field has value greater than 0 <code>validation</code> variable set to false.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Line previously <code>$('.cc-form input:checkbox').each(function(){});</code> select the check boxes and do the same.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Finally if <code>validation</code> variable is true <code>$('#search').attr('disabled', 'disabled');</code> disabled property is added to search button to disable it. Else <code>$('#search').removeAttr('disabled', 'disabled');</code> disabled property is being removed and search button is enabled.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Hope this tutorial was helpful. Working demo can be found <a href="https://vinothvkr.github.io/demo/js-submitbutton/">here</a>. If required source code is available <a href="https://github.com/vinothvkr/demo/blob/master/js-submitbutton/index.html">here</a> in Github.</p>
-<p><!-- /wp:paragraph --></p>
+```
+
+On document ready function `validateButton();` is being called, so on page load, form will be validated and if there is no value, button will be disabled.
+
+When ever keyup event occurs on any input text type `$('.cc-form input:text').keyup(validateButton);` calls the `validateButton();` and validates the form.
+
+If dropdown change event occurs `$('.cc-form select').change(validateButton);` will call `validateButton();` function.
+
+Finally if a checkbox is checked or unchecked, change event `$('.cc-form input:checkbox').change(validateButton);` fires up and call our `validateButton();` function.
+
+Let's see what our `validateButton();` does.
+
+When ever the function called, it will set the variable `validation` to true to disable the button if there is no value. `$('.cc-form input:text, .cc-form select').each(function(){ });` select input and select fields then loop it. `$.trim($(this).val()).length > 0` if any field has value greater than 0 `validation` variable set to false.
+
+Line previously `$('.cc-form input:checkbox').each(function(){});` select the check boxes and do the same.
+
+Finally if `validation` variable is true `$('#search').attr('disabled', 'disabled');` disabled property is added to search button to disable it. Else `$('#search').removeAttr('disabled', 'disabled');` disabled property is being removed and search button is enabled.
+
+Hope this tutorial was helpful. Working demo can be found [here](https://vinothvkr.github.io/demo/js-submitbutton/). If required source code is available [here](https://github.com/vinothvkr/demo/blob/master/js-submitbutton/index.html) in Github.

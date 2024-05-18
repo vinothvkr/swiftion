@@ -14,14 +14,12 @@ tags:
   - Asp.Net Core 2.2
 ---
 
-<p><!-- wp:paragraph --></p>
-<p>Each and every project requires exceptions to be logged in database. In this tutorial we are going to implement one of the method of database logger using Exception filter in Asp.Net core MVC project.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>First let&rsquo;s create LogEntry Model:</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>#Models/LogEntry.cs
+Each and every project requires exceptions to be logged in database. In this tutorial we are going to implement one of the method of database logger using Exception filter in Asp.Net core MVC project.
+
+First let's create LogEntry Model:
+
+```
+#Models/LogEntry.cs
 public class LogEntry
 {
     public int Id { get; set; }
@@ -35,16 +33,15 @@ public class LogEntry
     public string User { get; set; }
     public string ActionDescriptor { get; set; }
     public string IpAddress { get; set; }
-}</code></pre>
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>Next create a separate DbContext for exception logging. Why separate DbContext? Okay There are some scenarios where there will be an exception thrown while executing SQL command, if we use same DbContext to log the exception, Entity Framework cannot save the LogEntry to database, since the object which incurred the exception would still be available on DbContext. When we save the LogEntry, both the objects would be sent to database, again it throws the exception and LogEntry would not be saved.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Let&rsquo;s create LogDbContext:</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>#Data/LogDbContext.cs
+}
+```
+
+Next create a separate DbContext for exception logging. Why separate DbContext? Okay There are some scenarios where there will be an exception thrown while executing SQL command, if we use same DbContext to log the exception, Entity Framework cannot save the LogEntry to database, since the object which incurred the exception would still be available on DbContext. When we save the LogEntry, both the objects would be sent to database, again it throws the exception and LogEntry would not be saved.
+
+Let's create LogDbContext:
+
+```
+#Data/LogDbContext.cs
 
 public class LogDbContext : DbContext
 {
@@ -59,14 +56,14 @@ public DbSet LogEntries { get; set; }
         base.OnModelCreating(builder);
     }
 
-}</code></pre>
+}
 
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>Now we create Exception filter extension to catch and log the exception into database.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>#Filters/DblExceptionFilter.cs
+```
+
+Now we create Exception filter extension to catch and log the exception into database.
+
+```
+#Filters/DblExceptionFilter.cs
 
 public class DblExceptionFilter : ExceptionFilterAttribute
 {
@@ -93,41 +90,39 @@ User = context.HttpContext.User.Identity.Name
 \_context.LogEntries.Add(log);
 \_context.SaveChanges();
 }
-}</code></pre>
+}
 
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>Now let&rsquo;s add the <code>DblExceptionFilter</code> into service block in <code>starup.cs</code> class.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>public void ConfigureServices(IServiceCollection services)
+```
+
+Now let's add the `DblExceptionFilter` into service block in `starup.cs` class.
+
+```
+public void ConfigureServices(IServiceCollection services)
 {
     ...
     services.AddScoped<DblExceptionFilter>();
     ...
-}</code></pre>
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>Then create a <code>BaseController</code> class that is derived from Controller base class and add <code>DblExceptionFilter</code> as service.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>#Controllers/BaseController.cs
+}
+```
+
+Then create a `BaseController` class that is derived from Controller base class and add `DblExceptionFilter` as service.
+
+```
+#Controllers/BaseController.cs
 using System;
 using ExceptionDbLogger.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExceptionDbLogger.Controllers
 {
-&#91;ServiceFilter(typeof(DblExceptionFilter))]
+[ServiceFilter(typeof(DblExceptionFilter))]
 public class BaseController : Controller
 {
 }
-}</code></pre>
+}
 
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
-<p>So where ever you create a custom controller for your application just derive that controller from <code>BaseController</code>. Where there is an unhandled exceptions occurs, that will be logged into database.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Hope this tutorial is helpful. Source code of this implementation is available <a href="https://github.com/vinothvkr/ExceptionDbLogger">here</a> in my Github profile. If you have questions, post it on comment below.</p>
-<p><!-- /wp:paragraph --></p>
+```
+
+So where ever you create a custom controller for your application just derive that controller from `BaseController`. Where there is an unhandled exceptions occurs, that will be logged into database.
+
+Hope this tutorial is helpful. Source code of this implementation is available [here](https://github.com/vinothvkr/ExceptionDbLogger) in my Github profile. If you have questions, post it on comment below.

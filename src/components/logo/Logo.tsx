@@ -3,6 +3,7 @@ import RouterLink from 'next/link';
 
 import { Box, BoxProps, Link } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { MAIN_SITE_URL } from '@/config';
 
 export interface LogoProps extends BoxProps {
   disabledLink?: boolean;
@@ -50,7 +51,7 @@ const Logo = forwardRef<HTMLDivElement, LogoProps>(
     }
 
     return (
-      <Link component={RouterLink} href="/" sx={{ display: 'contents' }}>
+      <Link component={RouterLink} href={MAIN_SITE_URL} sx={{ display: 'contents' }}>
         {logo}
       </Link>
     );

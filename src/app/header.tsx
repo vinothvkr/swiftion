@@ -19,7 +19,7 @@ import { useState } from 'react';
 import { IconMenu2 } from '@tabler/icons-react';
 import useScreenDetector from '@/hooks/useScreenDetector';
 import useOffSetTop from '@/hooks/useOffSetTop';
-import { HEADER } from '@/config';
+import { HEADER, MAIN_SITE_URL } from '@/config';
 import RouterLink from 'next/link';
 import dynamic from 'next/dynamic';
 
@@ -102,10 +102,14 @@ export default function Header() {
             </Box>
             {isDesktop && (
               <Stack direction="row" spacing={2}>
-                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href="/">
+                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href={MAIN_SITE_URL}>
                   Home
                 </Button>
-                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href="/#about">
+                <Button
+                  color="secondary"
+                  sx={{ textTransform: 'uppercase' }}
+                  href={MAIN_SITE_URL + '/#about'}
+                >
                   About
                 </Button>
                 <Button

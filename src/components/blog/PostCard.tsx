@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 // import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 import RouterLink from 'next/link';
 
 type Post = {
@@ -40,7 +40,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
               /> */}
               <Box flexGrow={1} />
               <Typography component="time" variant="caption">
-                {format(date, 'dd MMM yyyy')}
+                {/* {format(date, 'dd MMM yyyy')} */}
               </Typography>
             </Stack>
             <Box sx={{ mt: 3 }}>

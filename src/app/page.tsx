@@ -23,7 +23,7 @@ export default function Home() {
               <BlogPostCard
                 slug={post.slug}
                 category={post.category}
-                date={post.date}
+                date={post.dateFormatted}
                 title={post.title}
                 excerpt={post.excerpt}
                 image={post.image}

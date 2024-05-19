@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+// import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -60,13 +60,13 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
           </CardContent>
         </Box>
 
-        <CardMedia
+        {/* <CardMedia
           component="img"
           sx={{ width: 151, m: '8px 8px 8px 0', borderRadius: '8px' }}
           image={image}
           alt={title}
           height="200px"
-        />
+        /> */}
       </Card>
     </>
   );

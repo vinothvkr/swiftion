@@ -1,5 +1,5 @@
 'use client';
-import { useTheme } from '@mui/material';
+// import { useTheme } from '@mui/material';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -21,7 +21,7 @@ type Post = {
 };
 
 export default function BlogPostCard({ slug, category, date, title, excerpt, image }: Post) {
-  const theme = useTheme();
+  //const theme = useTheme();
   return (
     <>
       <Card sx={{ display: 'flex' }}>
@@ -33,8 +33,8 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
                 size="small"
                 sx={{
                   borderRadius: '6px',
-                  bgcolor: theme.palette.info.lighter,
-                  color: theme.palette.info.darker,
+                  // bgcolor: theme.palette.info.lighter,
+                  // color: theme.palette.info.darker,
                   fontWeight: '700',
                 }}
               />
@@ -49,7 +49,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
                 href={'/' + slug}
                 variant="h6"
                 sx={{ textDecoration: 'none' }}
-                color={theme.palette.secondary.main}
+                // color={theme.palette.secondary.main}
               >
                 {title}
               </Link>

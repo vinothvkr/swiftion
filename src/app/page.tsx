@@ -18,16 +18,16 @@ export default function Home() {
       <Box sx={{ mt: 5 }}></Box>
       <Grid container spacing={5}>
         {posts &&
-          posts.map((post, index) => (
+          posts.map(post => (
             <Grid key={post.id} item xs={12} sm={6} md={6}>
-              {/* <BlogPostCard
+              <BlogPostCard
                 slug={post.slug}
                 category={post.category}
                 date={post.date}
                 title={post.title}
                 excerpt={post.excerpt}
                 image={post.image}
-              /> */}
+              />
             </Grid>
           ))}
       </Grid>

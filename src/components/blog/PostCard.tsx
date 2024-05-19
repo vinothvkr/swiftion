@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
-import Chip from '@mui/material/Chip';
+// import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { format } from 'date-fns';
@@ -28,7 +28,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
         <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: '1' }}>
           <CardContent sx={{ flex: '0 0 auto' }}>
             <Stack direction="row" alignItems="center">
-              <Chip
+              {/* <Chip
                 label={category}
                 size="small"
                 sx={{
@@ -37,7 +37,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
                   // color: theme.palette.info.darker,
                   fontWeight: '700',
                 }}
-              />
+              /> */}
               <Box flexGrow={1} />
               <Typography component="time" variant="caption">
                 {format(date, 'dd MMM yyyy')}

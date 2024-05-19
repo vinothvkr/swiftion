@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export async function generateStaticParams() {
@@ -15,6 +16,11 @@ export async function generateStaticParams() {
     slug: post.slug,
   }));
 }
+
+export const metadata: Metadata = {
+  title: 'Vinoth Kumar Rajendran',
+  description: 'Personal Blog of Vinoth Kumar Rajendran',
+};
 
 export default function Page({ params }: { params: { slug: string } }) {
   const post = getAllBlogPosts().find(x => x.slug === params.slug);

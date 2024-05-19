@@ -20,14 +20,14 @@ export default function Home() {
         {posts &&
           posts.map((post, index) => (
             <Grid key={post.id} item xs={12} sm={6} md={6}>
-              <BlogPostCard
+              {/* <BlogPostCard
                 slug={post.slug}
                 category={post.category}
                 date={post.date}
                 title={post.title}
                 excerpt={post.excerpt}
                 image={post.image}
-              />
+              /> */}
             </Grid>
           ))}
       </Grid>

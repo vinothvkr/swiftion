@@ -23,51 +23,49 @@ This guide shows how to restore the stock Oxygen OS from any custom ROM in OnePl
 
 Before we proceed, let's get all the required files downloaded.
 
-<ul>
-<li><a href="https://www.oneplus.in/support">Oxygen OS</a></li>
-<li><a href="https://github.com/ssut/payload-dumper-go/releases">payload-dumper-go</a></li>
-</ul>
+- [Oxygen OS](https://www.oneplus.in/support)
+- [payload-dumper-go](https://github.com/ssut/payload-dumper-go/releases)
 
-<p>Hope that adb and fastboot is already installed. If it is not installed, follow <a href="https://wiki.lineageos.org/adb_fastboot_guide.html">this guide</a> to install it in your computer.</p>
+Hope that adb and fastboot is already installed. If it is not installed, follow [this guide](https://wiki.lineageos.org/adb_fastboot_guide.html) to install it in your computer.
 
-<p>Let's create a folder named "android" in C: drive and move the downloaded files in this folder.</p>
+Let's create a folder named "android" in C: drive and move the downloaded files in this folder.
 
-<p>Now extract the payload-dumper-go zip file and move the <code>payload-dumper-go.exe</code> into the <code>android</code> folder, where the Oxygen OS zip file is available.</p>
+Now extract the payload-dumper-go zip file and move the `payload-dumper-go.exe` into the `android` folder, where the Oxygen OS zip file is available.
 
-<p>Now open the cmd/powershell and change the directory to <code>c:/android</code></p>
+Now open the cmd/powershell and change the directory to `c:/android`
 
-<p>Use the payload-dumper to extract the image files from Oxygen OS. Run the command below.</p>
+Use the payload-dumper to extract the image files from Oxygen OS. Run the command below.
 
-<pre class="wp-block-code"><code>PS C:/android> .\payload-dumper-go.exe .\OnePlusXXXX_...._XXXX.zip</code></pre>
+`PS C:/android> .\payload-dumper-go.exe .\OnePlusXXXX_...._XXXX.zip`
 
-<p>Change the <code>OnePlusXXXX_...._XXXX.zip</code> to match your Oxygen OS zip file name.</p>
+Change the `OnePlusXXXX\_....\_XXXX.zip` to match your Oxygen OS zip file name.
 
-<p>After the extracting process is done. We could find a new folder  <code>extracted_XXXXXXXX_XXXXX</code>.</p>
+After the extracting process is done. We could find a new folder `extracted_XXXXXXXX_XXXXX`.
 
-<p>Now change the command line to newly created folder.</p>
+Now change the command line to newly created folder.
 
-<pre id="block-6ad18143-122f-4c37-98a2-663a1dc4b08f" class="wp-block-code"><code>PS C:/android> cd extracted_XXXXXXXX_XXXXX</code></pre>
+`PS C:/android> cd extracted_XXXXXXXX_XXXXX`
 
-<p>Change the directory name <code>extracted_XXXXXXXX_XXXXX</code> with your matching name.</p>
+Change the directory name `extracted_XXXXXXXX_XXXXX` with your matching name.
 
-<h2>Flashing</h2>
+## Flashing
 
-<p>With the device powered off, hold <code>Volume Up</code> + <code>Volume Down</code> + <code>Power</code></p>
+With the device powered off, hold `Volume Up` + `Volume Down` + `Power`
 
-<p>Once the device is in fastboot mode, verify your PC finds it by typing</p>
+Once the device is in fastboot mode, verify your PC finds it by typing
 
-<p><code>fastboot devices</code></p>
+`fastboot devices`
 
-<p>Now flash the stock boot and recovery images</p>
+Now flash the stock boot and recovery images
 
-<pre class="wp-block-code"><code>fastboot flash --slot=all boot boot.img
-fastboot flash --slot=all recovery recovery.img</code></pre>
+`fastboot flash --slot=all boot boot.img
+fastboot flash --slot=all recovery recovery.img`
 
-<p>Then reboot system into fastbootd mode</p>
+Then reboot system into fastbootd mode
 
-<pre class="wp-block-code"><code>fastboot reboot fastboot</code></pre>
+`fastboot reboot fastboot`
 
-<p>Now let's start the flashing by wiping the device first.</p>
+Now let's start the flashing by wiping the device first.
 
 ```
 fastboot -w
@@ -105,15 +103,17 @@ fastboot flash --slot=all vendor vendor.img
 fastboot flash --slot=all product product.img
 ```
 
-<p>Now the flashing process is done. If you wanted to lock the bootloader follow the below commands else reboot the device by entering the command <code>fastboot reboot</code>.</p>
+Now the flashing process is done. If you wanted to lock the bootloader follow the below commands else reboot the device by entering the command `fastboot reboot`.
 
-<p>To lock the bootloader.</p>
+To lock the bootloader.
 
-<pre class="wp-block-code"><code>fastboot reboot bootloader
-fastboot oem lock</code></pre>
+```
+fastboot reboot bootloader
+fastboot oem lock
+```
 
-<p>Now follow the onscreen steps to complete the lock process. Once it is done enter the command <code>fastboot reboot</code> to boot into the phone.</p>
+Now follow the onscreen steps to complete the lock process. Once it is done enter the command `fastboot reboot` to boot into the phone.
 
-<p>Hope this guide helped you to restore the stock Oxygen OS in your device.</p>
+Hope this guide helped you to restore the stock Oxygen OS in your device.
 
-<p>You can support by buying a coffee ☕️ here &mdash; <a href="https://www.buymeacoffee.com/vinothvkr" target="_blank" rel="noreferrer noopener">https://www.buymeacoffee.com/vinothvkr</a></p>
+You can support by buying a coffee ☕️ here - https://www.buymeacoffee.com/vinothvkr

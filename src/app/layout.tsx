@@ -4,13 +4,13 @@ import Header from './header';
 import Box from '@mui/material/Box';
 import { SettingsProvider } from '@/components/settings/SettingsContext';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import ScrollProgress from '@/components/scroll-progress/ScrollProgress';
 
 // FONTS
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import ScrollProgress from '@/components/scroll-progress/ScrollProgress';
 
 export default function RootLayout({
   children,

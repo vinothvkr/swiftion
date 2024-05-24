@@ -13,6 +13,7 @@ import {
   ListItemText,
   Stack,
   Toolbar,
+  alpha,
   useTheme,
 } from '@mui/material';
 import { useState } from 'react';
@@ -78,8 +79,8 @@ export default function Header() {
               duration: theme.transitions.duration.shorter,
             }),
             ...(isOffset && {
-              // ...bgBlur({ color: theme.palette.background.default }),
-              backdropFilter: 'blur(6px)',
+              backdropFilter: 'blur(12px)',
+              backgroundColor: alpha(theme.palette.background.default, 0.5),
               height: {
                 md: HEADER.DESKTOP - 20,
               },

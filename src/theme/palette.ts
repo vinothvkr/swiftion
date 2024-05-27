@@ -73,12 +73,6 @@ export default function palette(themeMode: 'light' | 'dark') {
     ...common,
     mode: 'light',
     action: { disabledBackground: 'rgba(0, 0, 0, 0.06)' },
-    background: {
-      default: '#FFFFFF',
-      paper: '#FFFFFF',
-      neutral: stormGrey[200],
-    },
-    dividerChannel: '220 223 228',
     neutral: { ...stormGrey },
     text: {
       primary: nevada[900],
@@ -93,12 +87,6 @@ export default function palette(themeMode: 'light' | 'dark') {
     ...common,
     mode: 'dark',
     action: { disabledBackground: 'rgba(0, 0, 0, 0.12)' },
-    background: {
-      default: '#212121',
-      paper: stormGrey[800],
-      neutral: stormGrey[500],
-    },
-    dividerChannel: '50 56 62',
     neutral: { ...nevada },
     text: {
       primary: stormGrey[100],

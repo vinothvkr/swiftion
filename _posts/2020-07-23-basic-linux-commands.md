@@ -49,3 +49,15 @@ To delete user and his home directory
 ```
 sudo deluser --remove-home username
 ```
+
+To add a group to directory
+
+```
+sudo chgrp -R username directoryname
+```
+
+To make directory read write access to group
+
+```
+sudo chmod g+rwx -R directoryname
+```
